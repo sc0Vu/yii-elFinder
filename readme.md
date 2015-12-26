@@ -1,7 +1,8 @@
 <h2>yii-elfinder usage instructions</h2>
 <ol>
 <li>set server options in controller</li>
-<li><code>
+<li>
+<pre><code>
     public function actions()
     {
         $webRoot = Yii::getPathOfAlias('webroot');
@@ -47,16 +48,16 @@
             ),
         );
     }
-</code></li>
+</code></pre></li>
 <li>set log function(<a href="https://github.com/Studio-42/elFinder/wiki/Logging" target="_blank">detail</a>)</li>
-<li><code>
+<li><pre><code>
     public function log($cmd, $result, $args, $elfinder)
     {      
         .......
     }
-</code></li>
+</code></pre></li>
 <li>use in view
-<code>
+<pre><code>
     $this->widget('extensions.elFinder.ElFinderWidget', array(
         'clientSettings' => array(
           'resizable' => false,
@@ -71,17 +72,17 @@
         'async'=>true,  // async get elfinder js
         'defer'=>true,  // defer load elfinder js
         )
-</code></li>
+</code></pre></li>
 <li>5.render file <a href="https://github.com/Studio-42/elFinder/wiki/Client-configuration-options#commands" target="_blank">commands</a>
-<code>
-public function actionElfinder()
-{
-// check priority
-$commands = array('rm download ');
-if (Yii::app()->getRequest()->enableCsrfValidation) {
-    $customData = array($csrfTokenName, $csrfToken);
-}
-$this->render(file, compact('commands', 'customeData'));
-</code></li>
+<pre><code>
+    public function actionElfinder()
+    {
+    // check priority
+    $commands = array('rm download ');
+    if (Yii::app()->getRequest()->enableCsrfValidation) {
+        $customData = array($csrfTokenName, $csrfToken);
+    }
+    $this->render(file, compact('commands', 'customeData'));
+</code></pre></li>
 <li><a href="https://github.com/Studio-42/elFinder" target="_blank">Check elFinder wiki.</a></li>
 </ol>
